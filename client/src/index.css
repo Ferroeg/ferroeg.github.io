@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Warm, academic palette */
+  --background: 35 30% 96%;      /* Warm cream/parchment */
+  --foreground: 220 15% 20%;     /* Soft charcoal */
+
+  --primary: 215 35% 35%;        /* Deep academic blue */
+  --primary-foreground: 35 30% 96%;
+
+  --secondary: 30 25% 90%;       /* Darker parchment for cards */
+  --secondary-foreground: 220 15% 20%;
+
+  --muted: 30 15% 85%;
+  --muted-foreground: 220 10% 45%;
+
+  --accent: 25 40% 50%;          /* Terracotta/Leather book binding color */
+  --accent-foreground: 35 30% 96%;
+
+  --destructive: 0 60% 50%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 30 15% 82%;
+  --input: 30 15% 82%;
+  --ring: 215 35% 35%;
+
+  --radius: 0.5rem;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+.dark {
+  /* Dark academia palette */
+  --background: 220 20% 12%;     /* Very dark blue/charcoal */
+  --foreground: 35 20% 90%;      /* Off-white */
+
+  --primary: 35 30% 85%;         /* Parchment text */
+  --primary-foreground: 220 20% 12%;
+
+  --secondary: 220 15% 18%;
+  --secondary-foreground: 35 20% 90%;
+
+  --muted: 220 15% 25%;
+  --muted-foreground: 220 10% 60%;
+
+  --accent: 25 40% 60%;          /* Lighter terracotta */
+  --accent-foreground: 220 20% 12%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 85% 95%;
+
+  --border: 220 15% 25%;
+  --input: 220 15% 25%;
+  --ring: 35 30% 85%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
